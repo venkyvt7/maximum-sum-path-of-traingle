@@ -1,0 +1,53 @@
+#include<bits/stdc++.h>
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+using namespace std;
+int main() {
+	
+	int a[101][101],dp[101][101];
+	int i,j,k,n;
+	
+	cin>>n;
+	
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<=i;j++)
+		{
+			
+			cin>>a[i][j];
+			
+			if(i==n-1)
+			dp[i][j]=a[i][j];
+			
+		}	
+		
+	}
+	
+	
+	
+	
+	for(i=n-2;i>=0;i--)
+	{
+		for(j=i;j>=0;j--)
+		{
+			dp[i][j]=a[i][j]+max(dp[i+1][j],dp[i+1][j+1]);
+			
+			
+			
+		}
+		
+		
+		
+		
+	}
+	
+
+	
+	
+		cout<<dp[0][0]<<" ";
+	
+	
+	
+	
+	
+	return 0;
+}
